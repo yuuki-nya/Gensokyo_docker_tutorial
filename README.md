@@ -2,19 +2,27 @@
 
 本教程适用于 [beta509](https://github.com/Hoshinonyaruko/Gensokyo/commit/1c6e0723c92c7f6485d0df97c0da18d6cf53578e) 或更高版本的 [Gensokyo](https://github.com/Hoshinonyaruko/Gensokyo)，采用 Docker 部署，Nginx 反向代理，SSL 8443 端口复用，以及 Webhook 配置。请根据你的实际情况修改配置。
 
+## 准备工作
+- 已经申请好的QQ机器人， 本次案例使用 123456 这个QQ号
+- 一个已经国内备案，属于你的域名，本次案例使用 qqbot.abc.com 这个二级域名
+- 一个对应域名的SSL证书
+- 服务器推荐使用ubuntu 24.04, debian 12
+- 安装docker和docker-compose，国内服务器还需要配置好docker镜像加速
+- 服务器推荐使用 [1Panel](https://1panel.cn/docs/installation/online_installation/) 面板，方便管理网站，SSL证书，Docker容器等
+
 ## Docker 部署
 
 - 前往 [Releases](https://github.com/Hoshinonyaruko/Gensokyo/releases) 下载最新版的 Gensokyo，例如 [gensokyo-linux-amd64](https://github.com/Hoshinonyaruko/Gensokyo/releases/download/512%2Fmerge/gensokyo-linux-amd64)。
 - 假设你的 QQ Bot 号码是 123456。
 
-```bash
-mkdir -p /opt/qqbot/123456
-cd /opt/qqbot/123456
-wget https://github.com/Hoshinonyaruko/Gensokyo/releases/download/512%2Fmerge/gensokyo-linux-amd64
-mv gensokyo-linux-amd64 gensokyo
-chmod +x gensokyo
-./gensokyo # 首次执行，会生成 config.yml 并要求配置
-```
+  ```bash
+  mkdir -p /opt/qqbot/123456
+  cd /opt/qqbot/123456
+  wget https://github.com/Hoshinonyaruko/Gensokyo/releases/download/512%2Fmerge/gensokyo-linux-amd64
+  mv gensokyo-linux-amd64 gensokyo
+  chmod +x gensokyo
+  ./gensokyo # 首次执行，会生成 config.yml 并要求配置
+  ```
 
 - 准备好你域名的 SSL 证书，假设你的域名是 qqbot.abc.com，并已经申请好了 SSL。
 
@@ -150,6 +158,6 @@ curl -X POST https://qqbot.abc.com:8443/webhook
 
 最后，在 q.qq.com 登录你的 Bot 管理后台，前往“开发 - 回调配置”，测试通过后，扫码确认配置。
 
-![image-20241124164306001](images/image-20241124164306001.png)
+![webhook](images/webhook.jpg)
 
 别忘了下面的“添加事件”也要选上，扫码确认配置。
