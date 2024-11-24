@@ -6,9 +6,9 @@
 - 已经申请好的QQ机器人， 本次案例使用 123456 这个QQ号
 - 一个已经国内备案，属于你的域名，本次案例使用 qqbot.abc.com 这个二级域名
 - 一个对应域名的SSL证书
-- 服务器推荐使用ubuntu 24.04, debian 12
+- 服务器推荐使用ubuntu 24.04, debian 12，需要IPv4公网地址，不支持IPv6（家庭宽带也可以，配合DDNS使用）
 - 安装docker和docker-compose，国内服务器还需要配置好docker镜像加速
-- 服务器推荐使用 [1Panel](https://1panel.cn/docs/installation/online_installation/) 面板，方便管理网站，SSL证书，Docker容器等
+- 服务器推荐使用 [1Panel](https://1panel.cn) 面板，方便管理网站，SSL证书，Docker容器等
 
 ## Docker 部署
 
