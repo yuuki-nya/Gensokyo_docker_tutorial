@@ -59,7 +59,6 @@
 
   ```yaml
   # docker-compose.yml
-  version: '3'
   services:
     qqbot-123456:
       image: alpine:latest
@@ -69,7 +68,7 @@
         - 8888:8888 # 只映射后备 HTTP 端口，并且前后必须一致
       volumes:
         - /usr/share/zoneinfo/Asia/Shanghai:/etc/localtime:ro # 映射时区
-        - ${PWD}/gensokyo/123456:/app
+        - ${PWD}/123456:/app
       working_dir: /app
       command: sh -c "/app/gensokyo"
   ```
