@@ -45,7 +45,7 @@
   token: "<YOUR_APP_TOKEN>" # 你的应用令牌
   client_secret: "<YOUR_CLIENT_SECRET>" # 你的客户端密钥
   # Gensokyo 互联类
-  server_dir: "qqbot.abc.com" # 这里必须填你的域名或公网 IP 地址
+  server_dir: "qqbot.abc.com" # 这里必须填你的域名, IP没试过
   port: "8443" # 官方 Webhook 只支持 80、443、8080、8443 端口，且启用 SSL
   # SSL 配置类 和 白名单域名自动验证
   crt: "./cert/fullchain.pem" # 就是前面设置的
